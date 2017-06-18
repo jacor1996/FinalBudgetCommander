@@ -40,6 +40,21 @@ namespace FinalBudgetCommander.Models
             return new Data(plannedBalance, balance, startDate, endDate);
         }
 
+        public Data[] ComputeDataForEachMonth(int offset = -3)
+        {
+            Data[] datas = new Data[12];
+
+            DateTime now = DateTime.Now;
+            for (int i = 0; i < 12; i++)
+            {
+                DateTime start = now.AddMonths(offset + i);
+                string _start = start.ToShortDateString();
+                string _end = start.AddMonths(1).ToShortDateString();
+                datas[i] = ComputeBalance(_start, _end);
+            }
+            return datas;
+        }
+
         public string Noitify(Data computedData)
         {
             string notification = String.Empty;
@@ -69,6 +84,11 @@ namespace FinalBudgetCommander.Models
             Balance = balance;
             StartDate = startDate;
             EndDate = endDate;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}|{1}|{2}|{3}", PlannedBalance, Balance, StartDate, EndDate);
         }
     }
 }
