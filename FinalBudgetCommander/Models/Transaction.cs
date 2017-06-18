@@ -43,7 +43,7 @@ namespace FinalBudgetCommander.Models
 
         public override string ToString()
         {
-            return String.Format("Name: {0}| Value: {1}| Date: {2}| Category: {3}| IsPlanned: {4}", Name, Value, Date, Category, IsPlanned);
+            return String.Format("{0}|{1}|{2}|{3}|{4}", Name, Value, Date, Category, IsPlanned);
         }
     }
 }

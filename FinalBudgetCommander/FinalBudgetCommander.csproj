@@ -51,6 +51,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataAnalyzer.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\TransactionCollection.cs" />
     <Compile Include="Program.cs" />
