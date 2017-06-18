@@ -106,15 +106,58 @@ namespace FinalBudgetCommander.Models
             
         }
 
-        public void Load()
+        public void Load(string path = @"D:\Git\FinalBudgetCommander\FinalBudgetCommander\Files\transactions.txt")
         {
-            
+            try
+            {
+                string[] loadedData = File.ReadAllLines(path);
+                Transaction t;
+
+                foreach (string data in loadedData)
+                {
+                    string[] args = data.Split('|');
+                    if (args.Length == 5)
+                    {
+                        string name = args[0];
+                        double value = Double.Parse(args[1]);
+                        string date = args[2];
+                        string category = args[3];
+                        bool isPlanned = bool.Parse(args[4]);
+                        t = new Transaction(name, value, date, category, isPlanned);
+                    }
+                    else
+                    {
+                        t = new Transaction();
+                    }
+                    
+                    transactions.Add(t);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine("File does not exist!");
+                throw;
+            }
         }
 
         public IEnumerator GetEnumerator()
         {
             return new CollectionEnumerator(transactions.ToArray());
         }
+
+        public string[] GetCategories()
+        {
+            HashSet<string> set = new HashSet<string>();
+            
+            foreach (Transaction t in transactions)
+            {
+                set.Add(t.Category);
+            }
+            return set.ToArray();
+        }
+
     }
 
     class CollectionEnumerator : IEnumerator

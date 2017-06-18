@@ -23,6 +23,15 @@ namespace FinalBudgetCommander.Models
             this.IsPlanned = isPlanned;
         }
 
+        public Transaction()
+        {
+            Name = String.Empty;
+            Value = 0;
+            Date = DateTime.Now.ToShortDateString();
+            Category = String.Empty;
+            IsPlanned = false;
+        }
+
         public int CompareTo(object obj)
         {
             if (obj == null)
