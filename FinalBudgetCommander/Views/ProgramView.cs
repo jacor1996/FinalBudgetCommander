@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FinalBudgetCommander.Models;
+using System;
 using System.Windows.Forms;
-using FinalBudgetCommander.Models;
 
 namespace FinalBudgetCommander.Views
 {
@@ -20,8 +13,13 @@ namespace FinalBudgetCommander.Views
             _collection = collection;
             InitializeComponent();
             InitializeTransactionsView();
+
+            InitializeAddTranasctionView();
         }
 
+        
+
+        #region TransactionsListView
         private void InitializeTransactionsView()
         {
             transactionsListView.MultiSelect = false;
@@ -35,7 +33,7 @@ namespace FinalBudgetCommander.Views
         private void Test(object sender, ColumnClickEventArgs e)
         {
             int columnIndex = e.Column;
-            if (columnIndex == 3) { _collection.SortByCategory();}
+            if (columnIndex == 3) { _collection.SortByCategory(); }
             UpdateTransacstionsListView();
         }
 
@@ -56,5 +54,32 @@ namespace FinalBudgetCommander.Views
                 transactionsListView.Items.Add(item);
             }
         }
+
+
+        #endregion
+
+        #region AddTransactionView
+
+        private void InitializeAddTranasctionView()
+        {
+            nameTextBox.Text = "Default transaction";
+            valueTextBox.Text = "10.50";
+            
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            addButton.Enabled = true;
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Added");
+        }
+
+
+        #endregion
+
+
     }
 }
