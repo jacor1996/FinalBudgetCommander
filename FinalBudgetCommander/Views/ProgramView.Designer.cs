@@ -50,9 +50,9 @@
             this.addButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.checkBoxIsPlanned = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -144,9 +144,9 @@
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxCategory, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxIsPlanned, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -165,9 +165,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 51);
+            this.label1.Size = new System.Drawing.Size(202, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -176,9 +177,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 51);
+            this.label2.Location = new System.Drawing.Point(5, 56);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 51);
+            this.label2.Size = new System.Drawing.Size(202, 41);
             this.label2.TabIndex = 1;
             this.label2.Text = "Value:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,9 +189,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(3, 102);
+            this.label3.Location = new System.Drawing.Point(5, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(206, 51);
+            this.label3.Size = new System.Drawing.Size(202, 41);
             this.label3.TabIndex = 2;
             this.label3.Text = "Date:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,6 +204,7 @@
             this.valueTextBox.Name = "valueTextBox";
             this.valueTextBox.Size = new System.Drawing.Size(207, 20);
             this.valueTextBox.TabIndex = 7;
+            this.valueTextBox.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
             // nameTextBox
             // 
@@ -209,6 +213,7 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(207, 20);
             this.nameTextBox.TabIndex = 6;
+            this.nameTextBox.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
             // tabPage3
             // 
@@ -249,6 +254,7 @@
             this.checkButton.TabIndex = 10;
             this.checkButton.Text = "Check";
             this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // addButton
             // 
@@ -260,49 +266,62 @@
             this.addButton.TabIndex = 11;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 153);
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(5, 158);
+            this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(202, 41);
             this.label4.TabIndex = 12;
-            this.label4.Text = "label4";
+            this.label4.Text = "Category:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 204);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(206, 51);
             this.label5.TabIndex = 13;
-            this.label5.Text = "label5";
+            this.label5.Text = "Is planned?";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 105);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(215, 105);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(207, 20);
+            this.dateTimePicker.TabIndex = 14;
+            this.dateTimePicker.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
-            // comboBox1
+            // comboBoxCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(215, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.comboBoxCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(215, 156);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(207, 21);
+            this.comboBoxCategory.TabIndex = 15;
+            this.comboBoxCategory.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
-            // checkBox1
+            // checkBoxIsPlanned
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(215, 207);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxIsPlanned.AutoSize = true;
+            this.checkBoxIsPlanned.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxIsPlanned.Location = new System.Drawing.Point(215, 207);
+            this.checkBoxIsPlanned.Name = "checkBoxIsPlanned";
+            this.checkBoxIsPlanned.Size = new System.Drawing.Size(207, 45);
+            this.checkBoxIsPlanned.TabIndex = 16;
+            this.checkBoxIsPlanned.Text = "yes / no";
+            this.checkBoxIsPlanned.UseVisualStyleBackColor = true;
+            this.checkBoxIsPlanned.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
             // ProgramView
             // 
@@ -345,8 +364,8 @@
         private System.Windows.Forms.Button checkButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.CheckBox checkBoxIsPlanned;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
     }
 }

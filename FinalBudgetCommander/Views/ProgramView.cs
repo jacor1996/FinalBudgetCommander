@@ -1,5 +1,6 @@
 ﻿using FinalBudgetCommander.Models;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FinalBudgetCommander.Views
@@ -64,22 +65,68 @@ namespace FinalBudgetCommander.Views
         {
             nameTextBox.Text = "Default transaction";
             valueTextBox.Text = "10.50";
+            comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCategory.Items.AddRange(_collection.GetCategories());
+            comboBoxCategory.SelectedIndex = 0;
             
         }
 
+
+        //Events
         private void checkButton_Click(object sender, EventArgs e)
         {
-            addButton.Enabled = true;
+            string[] userInput = ReadUserInput();
+
+            if (Transaction.IsValid(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]))
+            {
+                addButton.Enabled = true;
+                addButton.Focus();
+            }
+
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            //Transaction t = new Transaction(ReadUserInput)
             MessageBox.Show("Added");
+        }
+
+        private void nameTextBox_Enter(object sender, EventArgs e)
+        {
+            LoseFocus();
+        }
+
+
+        private void LoseFocus()
+        {
+            addButton.Enabled = false;
+        }
+
+        //Events end
+
+        private string[] ReadUserInput()
+        {
+            string[] userInput = new string[5];
+
+            userInput[0] = nameTextBox.Text;
+            userInput[1] = valueTextBox.Text;
+            userInput[2] = dateTimePicker.Value.ToShortDateString();
+            userInput[3] = comboBoxCategory.SelectedItem.ToString();
+            userInput[4] = checkBoxIsPlanned.Checked.ToString();
+
+            Console.WriteLine("Debug user input");
+            foreach (var data in userInput)
+            {
+                Console.WriteLine(data);
+            }
+
+            return userInput;
         }
 
 
         #endregion
 
-
+        
     }
 }

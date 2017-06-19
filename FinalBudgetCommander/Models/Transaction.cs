@@ -32,6 +32,50 @@ namespace FinalBudgetCommander.Models
             IsPlanned = false;
         }
 
+        public Transaction(string name, string value, string date, string category, string isPlanned)
+        {
+            Name = name;
+            Value = Double.Parse(value);
+            Date = date;
+            Category = category;
+            IsPlanned = bool.Parse(isPlanned);
+        }
+
+        public static bool IsValid(string name, string value, string date, string category, string isPlanned)
+        {
+            bool _name;
+            bool _category;
+            double parsedValue;
+            DateTime parsedDate;
+            bool parsedIsPlanned;
+
+            if (name != null)
+            {
+                _name = true;
+            }
+            else
+            {
+                _name = false;
+            }
+
+            var _value = Double.TryParse(value, out parsedValue);
+
+            var _date = DateTime.TryParse(date, out parsedDate);
+
+            if (category != null)
+            {
+                _category = true;
+            }
+            else
+            {
+                _category = false;
+            }
+
+            var _isPlanned = bool.TryParse(isPlanned, out parsedIsPlanned);
+
+            return (_name && _value && _date && _category && _isPlanned);
+        }
+
         public int CompareTo(object obj)
         {
             if (obj == null)
