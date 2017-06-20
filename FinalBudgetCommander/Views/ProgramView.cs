@@ -18,6 +18,11 @@ namespace FinalBudgetCommander.Views
             InitializeAddTranasctionView();
         }
 
+        private void UpdateData(TransactionCollection collection)
+        {
+            _collection = collection;
+            UpdateTransacstionsListView();
+        }
         
 
         #region TransactionsListView
@@ -56,6 +61,25 @@ namespace FinalBudgetCommander.Views
             }
         }
 
+        private void deleteTransactionButton_Click(object sender, EventArgs e)
+        {
+            
+            var data = transactionsListView.SelectedItems[0].SubItems;
+            string[] args = new string[data.Count];
+
+            int i = 0;
+            foreach (ListViewItem.ListViewSubItem arg in data)
+            {
+                //Console.WriteLine(arg.Text);
+                args[i] = arg.Text;
+                i++;
+            }
+
+            Transaction newTransaction = new Transaction(args);
+            //Console.WriteLine(newTransaction);
+            _collection.Remove(_collection.Find(newTransaction));
+            UpdateData(_collection);
+        }
 
         #endregion
 
@@ -88,8 +112,10 @@ namespace FinalBudgetCommander.Views
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //Transaction t = new Transaction(ReadUserInput)
+            Transaction newTransaction = new Transaction(ReadUserInput());
+            _collection.Add(newTransaction);
             MessageBox.Show("Added");
+            UpdateData(_collection);
         }
 
         private void nameTextBox_Enter(object sender, EventArgs e)
@@ -125,7 +151,15 @@ namespace FinalBudgetCommander.Views
         }
 
 
+        //Add valid transaction
+
+
         #endregion
+
+        private void ProgramView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _collection.Save("test.txt");
+        }
 
         
     }

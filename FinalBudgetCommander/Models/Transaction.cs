@@ -41,6 +41,16 @@ namespace FinalBudgetCommander.Models
             IsPlanned = bool.Parse(isPlanned);
         }
 
+        public Transaction(string[] argStrings)
+        {
+            if (argStrings.Length != 5) return;
+            Name = argStrings[0];
+            Value = Double.Parse(argStrings[1]);
+            Date = argStrings[2];
+            Category = argStrings[3];
+            IsPlanned = bool.Parse(argStrings[4]);
+        }
+
         public static bool IsValid(string name, string value, string date, string category, string isPlanned)
         {
             bool _name;
@@ -86,7 +96,7 @@ namespace FinalBudgetCommander.Models
             Transaction cmpTransaction = obj as Transaction;
             if (cmpTransaction != null)
             {
-                return this.Name.CompareTo(cmpTransaction.Name);
+                return this.ToString().CompareTo(cmpTransaction.ToString());
             }
             else
             {

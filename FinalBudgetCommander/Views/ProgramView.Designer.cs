@@ -38,25 +38,28 @@
             this.isPlannedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.addButton = new System.Windows.Forms.Button();
+            this.checkButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.valueTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.checkButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.checkBoxIsPlanned = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.deleteTransactionButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,7 +78,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.transactionsListView);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -92,9 +95,11 @@
             this.dateColumn,
             this.categoryColumn,
             this.isPlannedColumn});
-            this.transactionsListView.Location = new System.Drawing.Point(24, 24);
+            this.transactionsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionsListView.Location = new System.Drawing.Point(3, 3);
+            this.transactionsListView.MultiSelect = false;
             this.transactionsListView.Name = "transactionsListView";
-            this.transactionsListView.Size = new System.Drawing.Size(331, 168);
+            this.transactionsListView.Size = new System.Drawing.Size(409, 235);
             this.transactionsListView.TabIndex = 0;
             this.transactionsListView.UseCompatibleStateImageBehavior = false;
             this.transactionsListView.View = System.Windows.Forms.View.Details;
@@ -161,6 +166,29 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 308);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // addButton
+            // 
+            this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addButton.Enabled = false;
+            this.addButton.Location = new System.Drawing.Point(3, 258);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(206, 47);
+            this.addButton.TabIndex = 11;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // checkButton
+            // 
+            this.checkButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkButton.Location = new System.Drawing.Point(215, 258);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(207, 47);
+            this.checkButton.TabIndex = 10;
+            this.checkButton.Text = "Check";
+            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -214,59 +242,6 @@
             this.nameTextBox.Size = new System.Drawing.Size(207, 20);
             this.nameTextBox.TabIndex = 6;
             this.nameTextBox.Enter += new System.EventHandler(this.nameTextBox_Enter);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(431, 314);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(431, 314);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(431, 314);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // checkButton
-            // 
-            this.checkButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkButton.Location = new System.Drawing.Point(215, 258);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(207, 47);
-            this.checkButton.TabIndex = 10;
-            this.checkButton.Text = "Check";
-            this.checkButton.UseVisualStyleBackColor = true;
-            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addButton.Enabled = false;
-            this.addButton.Location = new System.Drawing.Point(3, 258);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(206, 47);
-            this.addButton.TabIndex = 11;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label4
             // 
@@ -323,6 +298,60 @@
             this.checkBoxIsPlanned.UseVisualStyleBackColor = true;
             this.checkBoxIsPlanned.Enter += new System.EventHandler(this.nameTextBox_Enter);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(431, 314);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(431, 314);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(431, 314);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.transactionsListView, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.deleteTransactionButton, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 6);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(415, 302);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // deleteTransactionButton
+            // 
+            this.deleteTransactionButton.Location = new System.Drawing.Point(3, 244);
+            this.deleteTransactionButton.Name = "deleteTransactionButton";
+            this.deleteTransactionButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteTransactionButton.TabIndex = 1;
+            this.deleteTransactionButton.Text = "Delete";
+            this.deleteTransactionButton.UseVisualStyleBackColor = true;
+            this.deleteTransactionButton.Click += new System.EventHandler(this.deleteTransactionButton_Click);
+            // 
             // ProgramView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,11 +360,13 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "ProgramView";
             this.Text = "ProgramView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProgramView_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,5 +398,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.CheckBox checkBoxIsPlanned;
         private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button deleteTransactionButton;
     }
 }

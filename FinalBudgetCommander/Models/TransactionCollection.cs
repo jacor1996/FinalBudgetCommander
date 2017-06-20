@@ -45,6 +45,11 @@ namespace FinalBudgetCommander.Models
             return false;
         }
 
+        public Transaction Find(Transaction transaction)
+        {
+            return transactions.Find(t => transaction.CompareTo(t) == 0);
+        }
+
         public void Clear()
         {
             this.transactions = new List<Transaction>();
@@ -90,8 +95,14 @@ namespace FinalBudgetCommander.Models
 
         public void Save()
         {
-            string path = @"D:\Git\FinalBudgetCommander\FinalBudgetCommander\Files\";
-            string fileName = "transactions.txt";
+            const string fileName = "transactions.txt";
+
+            Save(fileName);
+        }
+
+        public void Save(string fileName)
+        {
+            const string path = @"D:\Git\FinalBudgetCommander\FinalBudgetCommander\Files\";
 
             try
             {
@@ -103,7 +114,6 @@ namespace FinalBudgetCommander.Models
                 Console.WriteLine(e);
                 throw;
             }
-            
         }
 
         public void Load(string path = @"D:\Git\FinalBudgetCommander\FinalBudgetCommander\Files\transactions.txt")
