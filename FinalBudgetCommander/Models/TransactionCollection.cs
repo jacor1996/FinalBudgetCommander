@@ -27,6 +27,22 @@ namespace FinalBudgetCommander.Models
             }
         }
 
+        public Transaction Transaction
+        {
+            get => default(Transaction);
+            set
+            {
+            }
+        }
+
+        internal CollectionEnumerator CollectionEnumerator
+        {
+            get => default(CollectionEnumerator);
+            set
+            {
+            }
+        }
+
         public void Add(Transaction transaction)
         {
             this.transactions.Add(transaction);

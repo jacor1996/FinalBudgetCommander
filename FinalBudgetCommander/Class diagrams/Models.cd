@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FinalBudgetCommander.Models.DataAnalyzer">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAQgAA=</HashCode>
+      <FileName>Models\DataAnalyzer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FinalBudgetCommander.Models.Data">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAEAAgAAAAgAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\DataAnalyzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalBudgetCommander.Models.Transaction" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEAAgAAAQAAAAAAQABAAAgAAAACAA=</HashCode>
+      <FileName>Models\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalBudgetCommander.Models.TransactionCollection" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAgIAAAAAAABAAAAAABAACAQAIAgAAAAAAAABEiAA=</HashCode>
+      <FileName>Models\TransactionCollection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Transaction" />
+      <Property Name="CollectionEnumerator" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalBudgetCommander.Models.CollectionEnumerator" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAACAAAIAAAAAAAAAIAAAAAABAAA=</HashCode>
+      <FileName>Models\TransactionCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

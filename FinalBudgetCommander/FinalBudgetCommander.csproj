@@ -87,6 +87,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Class diagrams\Models.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

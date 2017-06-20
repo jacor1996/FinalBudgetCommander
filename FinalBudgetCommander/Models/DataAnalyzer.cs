@@ -15,6 +15,13 @@ namespace FinalBudgetCommander.Models
             this.transactions = new TransactionCollection(transactions);
         }
 
+        public Data Data
+        {
+            get => default(Data);
+            set
+            {
+            }
+        }
 
         public Data ComputeBalance(string startDate, string endDate)
         {
