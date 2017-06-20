@@ -8,7 +8,7 @@ namespace FinalBudgetCommander.Models
 {
     public class DataAnalyzer
     {
-        private TransactionCollection transactions;
+        private readonly TransactionCollection transactions;
 
         public DataAnalyzer(TransactionCollection transactions)
         {
@@ -39,6 +39,7 @@ namespace FinalBudgetCommander.Models
 
             return new Data(plannedBalance, balance, startDate, endDate);
         }
+
 
         public Data[] ComputeDataForEachMonth(int offset = -3)
         {

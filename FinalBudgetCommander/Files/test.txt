@@ -2,6 +2,8 @@ Salary|3219.56|1/10/2017|Work|True
 Salary|3229.56|2/10/2017|Work|True
 Salary|3419.76|3/10/2017|Work|True
 Salary|3219.56|4/10/2017|Work|True
+Salary|3219.56|5/10/2017|Work|True
+Salary|3219.56|6/10/2017|Work|True
 Salary|3229.56|7/10/2017|Work|True
 Salary|3419.76|8/10/2017|Work|True
 Salary|3219.56|9/10/2017|Work|True
@@ -28,6 +30,7 @@ Electricity bills|-400.39|5/10/2017|Bills|True
 Electricity bills|-400.39|6/10/2017|Bills|True
 Electricity bills|-400.39|7/10/2017|Bills|True
 Electricity bills|-400.39|8/10/2017|Bills|True
+Electricity bills|-400.39|9/10/2017|Bills|True
 Electricity bills|-400.39|10/10/2017|Bills|True
 Electricity bills|-400.39|11/10/2017|Bills|True
 Electricity bills|-400.39|12/10/2017|Bills|True

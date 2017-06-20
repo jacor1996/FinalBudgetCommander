@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FinalBudgetCommander.Views
 {
@@ -16,6 +17,7 @@ namespace FinalBudgetCommander.Views
             InitializeTransactionsView();
 
             InitializeAddTranasctionView();
+            Chart();
         }
 
         private void UpdateData(TransactionCollection collection)
@@ -23,7 +25,27 @@ namespace FinalBudgetCommander.Views
             _collection = collection;
             UpdateTransacstionsListView();
         }
-        
+
+        private void Chart()
+        {
+            chart1.Series.Add("Wykres");
+            DataAnalyzer analyzer = new DataAnalyzer(_collection);
+            Data[] data = analyzer.ComputeDataForEachMonth(-6);
+
+            chart1.Series[0].YValuesPerPoint = 3;
+            chart1.Series[0].MarkerStep = 3;
+            
+
+            foreach (var d in data)
+            {
+                string timeSpan = String.Format("{0} - {1}", d.StartDate, d.EndDate);
+                chart1.Series[0].Points.AddXY(timeSpan, d.PlannedBalance, d.Balance);
+                
+                
+            }
+            
+            
+        }
 
         #region TransactionsListView
         private void InitializeTransactionsView()
