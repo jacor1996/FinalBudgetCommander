@@ -1,6 +1,7 @@
 ﻿using FinalBudgetCommander.Models;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -28,20 +29,22 @@ namespace FinalBudgetCommander.Views
 
         private void Chart()
         {
-            chart1.Series.Add("Wykres");
+            chart1.Series.Add("Planned balance");
+            chart1.Series.Add("Total balance");
             DataAnalyzer analyzer = new DataAnalyzer(_collection);
             Data[] data = analyzer.ComputeDataForEachMonth(-6);
 
-            chart1.Series[0].YValuesPerPoint = 3;
-            chart1.Series[0].MarkerStep = 3;
+            chart1.Series[0].YValuesPerPoint = 1;
+            
             
 
             foreach (var d in data)
             {
                 string timeSpan = String.Format("{0} - {1}", d.StartDate, d.EndDate);
-                chart1.Series[0].Points.AddXY(timeSpan, d.PlannedBalance, d.Balance);
-                
-                
+                chart1.Series[0].Points.AddXY(timeSpan, d.PlannedBalance);
+                chart1.Series[1].Points.AddXY(timeSpan, d.Balance);
+                chart1.Series[0].Color = Color.Blue;
+                chart1.Series[1].Color = Color.Red;
             }
             
             

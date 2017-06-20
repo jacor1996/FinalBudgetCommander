@@ -1,27 +1,3 @@
-Salary|3219.56|1/10/2017|Work|True
-Salary|3229.56|2/10/2017|Work|True
-Salary|3419.76|3/10/2017|Work|True
-Salary|3219.56|4/10/2017|Work|True
-Salary|3219.56|5/10/2017|Work|True
-Salary|3219.56|6/10/2017|Work|True
-Salary|3229.56|7/10/2017|Work|True
-Salary|3419.76|8/10/2017|Work|True
-Salary|3219.56|9/10/2017|Work|True
-Salary|3229.56|10/10/2017|Work|True
-Salary|3419.76|11/10/2017|Work|True
-Salary|3219.56|12/10/2017|Work|True
-Food|-320.5|1/10/2017|Food|True
-Food|-220.7|2/10/2017|Food|True
-Food|-360.5|3/10/2017|Food|True
-Food|-320.5|4/10/2017|Food|True
-Food|-322.8|5/10/2017|Food|True
-Food|-400.8|6/10/2017|Food|True
-Food|-320.5|7/10/2017|Food|True
-Food|-220.3|8/10/2017|Food|True
-Food|-370.2|9/10/2017|Food|True
-Food|-320.5|10/10/2017|Food|True
-Food|-220.7|11/10/2017|Food|True
-Food|-360.5|12/10/2017|Food|True
 Electricity bills|-400.2|1/10/2017|Bills|True
 Electricity bills|-400.1|2/10/2017|Bills|True
 Electricity bills|-400.39|3/10/2017|Bills|True
@@ -34,6 +10,30 @@ Electricity bills|-400.39|9/10/2017|Bills|True
 Electricity bills|-400.39|10/10/2017|Bills|True
 Electricity bills|-400.39|11/10/2017|Bills|True
 Electricity bills|-400.39|12/10/2017|Bills|True
-Beer with friends|-20|9/10/2017|Entertainment|False
-Books|-19.56|9/10/2017|Education|True
 Phone bills|-219.56|9/10/2017|Bills|True
+Books|-19.56|9/10/2017|Education|True
+Beer with friends|-20|9/10/2017|Entertainment|False
+Food|-320.5|1/10/2017|Food|True
+Food|-220.7|2/10/2017|Food|True
+Food|-360.5|3/10/2017|Food|True
+Food|-320.5|4/10/2017|Food|True
+Food|-322.8|5/10/2017|Food|True
+Food|-400.8|6/10/2017|Food|True
+Food|-320.5|7/10/2017|Food|True
+Food|-220.3|8/10/2017|Food|True
+Food|-370.2|9/10/2017|Food|True
+Food|-320.5|10/10/2017|Food|True
+Food|-220.7|11/10/2017|Food|True
+Food|-360.5|12/10/2017|Food|True
+Salary|3219.56|1/10/2017|Work|True
+Salary|3229.56|2/10/2017|Work|True
+Salary|3419.76|3/10/2017|Work|True
+Salary|3219.56|4/10/2017|Work|True
+Salary|3219.56|5/10/2017|Work|True
+Salary|3219.56|6/10/2017|Work|True
+Salary|3229.56|7/10/2017|Work|True
+Salary|3419.76|8/10/2017|Work|True
+Salary|3219.56|9/10/2017|Work|True
+Salary|3229.56|10/10/2017|Work|True
+Salary|3419.76|11/10/2017|Work|True
+Salary|3219.56|12/10/2017|Work|True
