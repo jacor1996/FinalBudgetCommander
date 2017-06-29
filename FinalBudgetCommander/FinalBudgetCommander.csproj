@@ -78,6 +78,7 @@
     <EmbeddedResource Include="Views\ProgramView.resx">
       <DependentUpon>ProgramView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Class diagrams\Views.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
